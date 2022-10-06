@@ -4,7 +4,7 @@
 ```shell
 docker-compose up --build -d
 docker-compose exec web bash
-#web python manage.py migrate
+python manage.py migrate
 ```
 Server will be available at http://0.0.0.0:8000
 
