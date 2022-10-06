@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      - TZ=UTC
+      - POSTGRES_DB=test
+      - POSTGRES_USER=test_admin
+      - POSTGRES_PASSWORD=jhko0WdaA88DSXqq
+      - TIMEOUT=7000
+    volumes:
+      - .:/test_task
+    restart: always
+
+  web:
+    build: .
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/test_task
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: always
