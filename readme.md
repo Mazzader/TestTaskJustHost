@@ -8,4 +8,4 @@ python manage.py migrate
 ```
 Server will be available at http://0.0.0.0:8000
 
-Documentation will be available at http://0.0.0.0:8000/api/doc
+Documentation will be available at http://0.0.0.0:8000/api/redoc
